@@ -5,5 +5,8 @@ $c_terciario:#950101;
 $c_cuarto: #FF0000; 
 
 //VARIABLES BOOTSTRAP MODIFICADAS
+$primary:$c_principal;
+$danger:$c_cuarto;
+
 
 @import "../node_modules/bootstrap/scss/bootstrap"

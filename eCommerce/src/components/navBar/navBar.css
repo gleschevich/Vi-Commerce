@@ -10265,4 +10265,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+#logo {
+  color: #FF0000;
+}/*# sourceMappingURL=navBar.css.map */
