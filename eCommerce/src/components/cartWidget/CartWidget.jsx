@@ -5,7 +5,9 @@ import styles from './cartWidget.scss'
 const CartWidget = () => {
   return (
     <div>
+  
     <FaShoppingCart/>
+     
     </div>
   )
 }
