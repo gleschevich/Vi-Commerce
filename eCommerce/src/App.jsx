@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-        <ItemListContainer nombreProducto="Vendemos Vinilos Musicales!"/>
+        <ItemListContainer nombreProducto="Ofertas en coleccion de vinilos!"/>
     </div>
   )
 }

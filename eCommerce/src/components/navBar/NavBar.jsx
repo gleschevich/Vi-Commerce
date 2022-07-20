@@ -1,6 +1,7 @@
 
 import styles from './navBar.scss'
 import CartWidget from '../cartWidget/CartWidget'
+import{FcMusic} from 'react-icons/fc'
 
 const NavBar = () => {
   return (
@@ -11,7 +12,7 @@ const NavBar = () => {
     {//Contenedor de los elementos y botones del NavBar
     }
     <div className="container-fluid">
-      <a className="navbar-brand border border-white rounded-circle border-2" id="logo" href="#">Vi-Commerce</a>
+      <a className="navbar-brand border border-white rounded-circle border-2" id="logo" href="#">Vi-Commerce <FcMusic/></a>
        {//Boton del submenu
        }
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
