@@ -1,11 +1,14 @@
 
 import styles from './navBar.scss'
+
 import CartWidget from '../cartWidget/CartWidget'
+
 import{FcMusic} from 'react-icons/fc'
+
 
 const NavBar = () => {
   return (
-    <div>
+    <>
     {//Contenedor de TODO el navBar
     }
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -58,7 +61,7 @@ const NavBar = () => {
     </div>
   </nav>
     
-    </div>
+    </>
   )
 }
 

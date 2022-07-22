@@ -1,7 +1,14 @@
-@import "/Users/gejo/Sites/localhost/eCommerce-Musica/eCommerce/src/styles.scss";
+@import "/src/styles.scss";
+
+.card{
+    width: 18rem;
+}
+
 #productos{
-    background-color:$c_secundario;
+    background-color: $primary;
     color:white;
-    height: 300px;
-    width: 100%;
+    margin:100px;
+
+     height: 100%;
+     width: 100%;
 }
