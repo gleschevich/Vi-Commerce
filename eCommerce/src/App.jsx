@@ -4,7 +4,7 @@ import './App.css'
 
 //LIBRERIAS Y FRAMEWORKS
 import '../node_modules/bootstrap/dist/js/bootstrap';
-import "/src/styles.scss";
+import styles from "./styles.css";
 
 //COMPONENTES
 import NavBar from './components/navBar/NavBar'
@@ -14,12 +14,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-  <div className="App">
+  <>
 
       <NavBar/>
-      <ItemListContainer nombreProducto="Nuestros productos"/>
+      
+          <ItemListContainer nombreProducto="Nuestros vinilos"/>
+      
 
-  </div>
+  </>
     )
 }
 

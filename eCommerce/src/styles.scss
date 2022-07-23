@@ -8,9 +8,16 @@ $c_cuarto: #FF0000;
 $primary:$c_principal;
 $danger:$c_cuarto;
 
-//
+//Opciones BOOTSTRAP
 $enable-shadows:true;
 $spacer:2rem;
 
+
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
+//CSS GENERAL
+body{
+    background-image: linear-gradient(to bottom, $primary,grey) ;
+    
+}

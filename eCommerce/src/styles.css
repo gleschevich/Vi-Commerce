@@ -10302,4 +10302,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+body {
+  background-image: linear-gradient(to bottom, #000000, grey);
 }/*# sourceMappingURL=styles.css.map */
