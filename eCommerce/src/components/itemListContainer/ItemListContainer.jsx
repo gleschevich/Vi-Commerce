@@ -8,16 +8,17 @@ const ItemListContainer = (props) => {
 
   const onAdd = (childData) =>{
       totalProductos+=childData;
-      console.log(totalProductos)
-  }
+      props.verTotalenCarrito(totalProductos)
+
+}
   
   return (
     <>
         <section className= 'container-fluid mt-5' id="productos">
-          <h3>{props.nombreProducto}</h3>
+          <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.nombreProducto}</h3>
           <div className='row row-cols-lg-3 row-cols-md-2 row-col-sm-1'>
           <div className='col'>
-            <div className='card'>
+            <div className='card  '>
                 <img className='card-img-top border border-danger' src='./img/MaidenCollection.jpeg'/>
               <div className='card-body'>
                 <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
@@ -26,7 +27,7 @@ const ItemListContainer = (props) => {
           </div>
         </div>
             <div className='col'>
-            <div className='card'>
+            <div className='card mt-lg-0 mt-md-0 mt-sm-3'>
                 <img className='card-img-top border border-danger' src='./img/Maiden-Killers.jpeg'/>
                 <div className='card-body'>
                 <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
@@ -36,12 +37,11 @@ const ItemListContainer = (props) => {
             </div>
           </div>
           <div className='col'>
-            <div className='card'>
+            <div className='card mt-lg-0 mt-md-3 mt-sm-3 mb-lg-2' >
                 <img className='card-img-top border border-danger' src='./img/Maiden-Killers.jpeg'/>
                 <div className='card-body'>
                 <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
                 <ItemCount stock = "5" inicial="1" callbackPadre={onAdd}/>
-
                 </div>           
             </div>
           </div>
