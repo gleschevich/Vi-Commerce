@@ -6,7 +6,7 @@ import CartWidget from '../cartWidget/CartWidget'
 import{FcMusic} from 'react-icons/fc'
 
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <>
     {//Contenedor de TODO el navBar
@@ -49,7 +49,7 @@ const NavBar = (props) => {
         </ul>
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <button className="btn btn-danger ms-3 me-3 mb-3 mb-lg-0" href="#" id='cart'> <CartWidget/>{ props.totalCarrito}</button>
+            <button className="btn btn-danger ms-3 me-3 mb-3 mb-lg-0" href="#" id='cart'> <CartWidget/></button>
           </li>
         </ul>
         <form className="d-flex ">

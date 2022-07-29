@@ -9,7 +9,6 @@ const ItemCount = (props) => {
             setCantProducto(cantProducto)
         else
             setCantProducto(cantProducto+1)
-  
     }
     const restar = () =>{
       if (cantProducto == 0)
@@ -18,16 +17,13 @@ const ItemCount = (props) => {
         setCantProducto(cantProducto-1)
     }
     
-    const añadir = () =>{
-        props.callbackPadre(cantProducto)
-
-    }
+    
     return (
     <>
         <a className='btn btn-primary m-2' href='#' onClick={restar}> - </a>
         <output className='text-primary'>{cantProducto}</output>
         <a className='btn btn-primary m-2' href='#' onClick={sumar}> + </a>
-        <a className='btn btn-primary' href='#' onClick={añadir}> Añadir al carrito </a>
+        <a className='btn btn-primary' href='#' > Añadir al carrito </a>
 
     </>
   )

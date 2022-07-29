@@ -1,7 +1,10 @@
 
 import { FcCallback } from 'react-icons/fc'
 import ItemCount from '../itemCount/ItemCount'
+import ItemList from '../itemList/ItemList';
 import styles from './itemListContainer.scss'
+import { useState,useEffect } from 'react'
+
 
 const ItemListContainer = (props) => {
   let totalProductos=0;
@@ -11,41 +14,54 @@ const ItemListContainer = (props) => {
       props.verTotalenCarrito(totalProductos)
 
 }
-  
+
+const [productos, setProductos] = useState([])
+
+useEffect(() => {
+let arregloObjetos= [
+  {
+    id:1,
+    artista:"Iron Maiden",
+    album: "Iron Maiden",
+    precio:2500,
+    imagenURL:"./img/MaidenCollection.jpeg"
+  },
+  {
+    id:2,
+    artista:"Iron Maiden",
+    album: "Killers",
+    precio:2500,
+    imagenURL:"./img/Maiden-Killers.jpeg"
+  },
+  {
+    id:3,
+    artista:"Iron Maiden",
+    album: "Fear of the dark",
+    precio:2500,
+    imagenURL:"./img/Maiden-Fear.jpeg"
+  }
+]
+
+
+
+const promesa = new Promise((res,rej) => {
+  setTimeout(() => {
+    res(arregloObjetos)
+  },2000)
+})
+promesa.then((res)=>{
+
+  setProductos(res)
+
+})
+
+}, [])
+
   return (
     <>
         <section className= 'container-fluid mt-5' id="productos">
           <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.nombreProducto}</h3>
-          <div className='row row-cols-lg-3 row-cols-md-2 row-col-sm-1'>
-          <div className='col'>
-            <div className='card  '>
-                <img className='card-img-top border border-danger' src='./img/MaidenCollection.jpeg'/>
-              <div className='card-body'>
-                <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
-                <ItemCount stock = "5" inicial="1" callbackPadre={onAdd}/>
-              </div>           
-          </div>
-        </div>
-            <div className='col'>
-            <div className='card mt-lg-0 mt-md-0 mt-sm-3'>
-                <img className='card-img-top border border-danger' src='./img/Maiden-Killers.jpeg'/>
-                <div className='card-body'>
-                <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
-                <ItemCount stock = "5" inicial="1" callbackPadre={onAdd}/>
-
-                </div>           
-            </div>
-          </div>
-          <div className='col'>
-            <div className='card mt-lg-0 mt-md-3 mt-sm-3 mb-lg-2' >
-                <img className='card-img-top border border-danger' src='./img/Maiden-Killers.jpeg'/>
-                <div className='card-body'>
-                <h5 className='card-title text-primary'>Iron Maiden - Iron Maiden</h5>
-                <ItemCount stock = "5" inicial="1" callbackPadre={onAdd}/>
-                </div>           
-            </div>
-          </div>
-          </div>
+          <ItemList productos={productos}/>  
         </section>
 
     </>
