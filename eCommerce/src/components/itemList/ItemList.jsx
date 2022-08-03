@@ -2,7 +2,6 @@ import Item from "../item/Item"
 import { useState,useEffect } from 'react'
 
 const ItemList = ({productos}) => {
-  console.log(productos)
     
     
   return (

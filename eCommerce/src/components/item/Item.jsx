@@ -1,9 +1,9 @@
 import { useState,useEffect } from 'react'
 import ItemCount from '../itemCount/ItemCount'
+import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer'
 
 
 const Item = (item) => {
-  
 
 
   return (
@@ -12,11 +12,10 @@ const Item = (item) => {
     <div className='card mt-lg-0 mt-md-0 mt-sm-3'>
         <img className='card-img-top border border-danger' src={item.productos.imagenURL}/>
         <div className='card-body'>
-            <p className='card-title text-primary'>{item.productos.artista}</p>
-            <p className='text-primary'>{item.productos.album}</p>
             <p className='text-primary'>${item.productos.precio}</p>
-            <ItemCount stock = "5" inicial="1"/>
         </div>           
+        <a className='btn btn-primary' href='#' > Ver Detalle </a>
+
     </div>
     
 
