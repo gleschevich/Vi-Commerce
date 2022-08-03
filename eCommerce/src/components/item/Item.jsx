@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react'
 import ItemCount from '../itemCount/ItemCount'
 import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer'
+import {FaHeart} from 'react-icons/fa'
 
 
 const Item = (item) => {
@@ -9,12 +10,17 @@ const Item = (item) => {
   return (
     <>
     
-    <div className='card mt-lg-0 mt-md-0 mt-sm-3'>
+    <div className='card mt-lg-0 mt-md-0 mt-sm-3 mb-3'>
         <img className='card-img-top border border-danger' src={item.productos.imagenURL}/>
         <div className='card-body'>
-            <p className='text-primary'>${item.productos.precio}</p>
+            <p className='text-primary' id='text-precio'>${item.productos.precio}</p>
         </div>           
-        <a className='btn btn-primary' href='#' > Ver Detalle </a>
+        <div className='mb-3' id='details-icons'>
+          <a className='btn btn-primary'>Ver Detalle </a>
+          <a className='btn btn-primary btn-icon ms-3' id='fav-icon'> <FaHeart/> </a>
+        </div>
+
+
 
     </div>
     

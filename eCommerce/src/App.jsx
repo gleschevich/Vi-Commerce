@@ -18,22 +18,38 @@ function App() {
       artista:"Iron Maiden",
       album: "Iron Maiden",
       precio:2500,
-      imagenURL:"./img/MaidenCollection.jpeg"
+      imagenURL:"./img/MaidenCollection.jpeg",
+      tipo:"Vinilo",
+      año:1980
     },
     {
       id:2,
       artista:"Iron Maiden",
       album: "Killers",
       precio:2500,
-      imagenURL:"./img/Maiden-Killers.jpeg"
+      imagenURL:"./img/Maiden-Killers.jpeg",
+      tipo:"Vinilo",
+      año:1981
     },
     {
       id:3,
       artista:"Iron Maiden",
       album: "Fear of the dark",
       precio:2500,
-      imagenURL:"./img/Maiden-Fear.jpeg"
-    }])
+      imagenURL:"./img/Maiden-Fear.jpeg",
+      tipo:"Vinilo",
+      año:1992
+    },
+      {
+        id:4,
+        artista:"Michael Jackson",
+        album: "Past, Present & Future I",
+        precio:3450,
+        imagenURL:"./img/Jackson-PPFI.jpeg",
+        tipo:"vinilo",
+        año:1995
+      }
+    ])
   
   
 
