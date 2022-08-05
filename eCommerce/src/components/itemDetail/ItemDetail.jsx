@@ -4,7 +4,6 @@ import ItemCount from '../itemCount/ItemCount'
 
 const ItemDetail = (props) => {
   
-console.log(props)
   return (
     <>
     

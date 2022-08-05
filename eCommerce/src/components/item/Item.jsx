@@ -17,7 +17,7 @@ const Item = (item) => {
             <p className='text-primary' id='text-precio'>${item.productos.precio}</p>
         </div>           
         <div className='mb-3' id='details-icons'>
-          <a className='btn btn-primary'><Link to='/producto/'>Ver Detalle</Link> </a>
+          <a className='btn btn-primary'><Link to='/producto/1'>Ver Detalle</Link> </a>
           <a className='btn btn-primary btn-icon ms-3' id='fav-icon'> <FaHeart/> </a>
         </div>
 

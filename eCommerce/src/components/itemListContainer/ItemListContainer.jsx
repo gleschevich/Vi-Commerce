@@ -60,6 +60,16 @@ let auxProductos = [
       tipo:"vinilo",
       año:1995,
       idCategoria:"Pop"
+    },
+    {
+      id:5,
+      artista:"Queen",
+      album: "A Night at the Opera",
+      precio:3700,
+      imagenURL:"../img/Queen-ANATO.jpeg",
+      tipo:"vinilo",
+      año:1975,
+      idCategoria:"Rock"
     }
   ]
   useEffect(() => {

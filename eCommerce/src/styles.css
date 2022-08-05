@@ -10305,4 +10305,8 @@ textarea.form-control-lg {
 }
 body {
   background-image: linear-gradient(to bottom, #000000, grey);
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=styles.css.map */
