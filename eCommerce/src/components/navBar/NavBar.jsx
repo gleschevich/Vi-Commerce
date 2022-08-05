@@ -5,6 +5,7 @@ import CartWidget from '../cartWidget/CartWidget'
 
 import{FcMusic} from 'react-icons/fc'
 
+import {Link} from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -15,7 +16,7 @@ const NavBar = () => {
     {//Contenedor de los elementos y botones del NavBar
     }
     <div className="container-fluid">
-      <a className="navbar-brand border border-white rounded-circle border-2" id="logo" href="#">Vi-Commerce <FcMusic/></a>
+      <a className="navbar-brand border border-white rounded-circle border-2" id="logo"><Link to='/'> Vi-Commerce <FcMusic/></Link> </a>
        {//Boton del submenu
        }
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +29,7 @@ const NavBar = () => {
         }
         <ul className="navbar-nav me-0 mb-2 mb-lg-0 me-lg-0 ">
           <li className="nav-item ">
-            <a className="nav-link" aria-current="page" href="#">Home</a>
+            <a className="nav-link" aria-current="page" href="#"><Link to='/'>Home</Link></a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Vinilos</a>
@@ -38,9 +39,9 @@ const NavBar = () => {
                 Categorías
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item" href="#">Rock</a></li>
-                <li><a className="dropdown-item" href="#">Metal</a></li>
-                <li><a className="dropdown-item" href="#">Pop</a></li>
+                <li><a className="dropdown-item"><Link to='/categoria/Rock'>Rock</Link></a></li>
+                <li><a className="dropdown-item"><Link to='/categoria/Metal'>Metal</Link></a></li>
+                <li><a className="dropdown-item"><Link to='/categoria/Pop'>Pop</Link></a></li>
               </ul>
            </li>
            <li>

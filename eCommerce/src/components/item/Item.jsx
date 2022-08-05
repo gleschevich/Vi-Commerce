@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react'
 import ItemCount from '../itemCount/ItemCount'
 import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer'
 import {FaHeart} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 
 const Item = (item) => {
@@ -16,7 +17,7 @@ const Item = (item) => {
             <p className='text-primary' id='text-precio'>${item.productos.precio}</p>
         </div>           
         <div className='mb-3' id='details-icons'>
-          <a className='btn btn-primary'>Ver Detalle </a>
+          <a className='btn btn-primary'><Link to='/producto/'>Ver Detalle</Link> </a>
           <a className='btn btn-primary btn-icon ms-3' id='fav-icon'> <FaHeart/> </a>
         </div>
 

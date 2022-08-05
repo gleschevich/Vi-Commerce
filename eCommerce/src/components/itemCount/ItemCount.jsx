@@ -11,7 +11,7 @@ const ItemCount = (props) => {
             setCantProducto(cantProducto+1)
     }
     const restar = () =>{
-      if (cantProducto == 0)
+      if (cantProducto == 1)
         setCantProducto(cantProducto)
       else
         setCantProducto(cantProducto-1)
