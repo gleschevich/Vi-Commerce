@@ -58,23 +58,23 @@ let auxProductos=[
       idCategoria:"Rock"
     }
   ]
-
 useEffect(() => {
   
     
     const getItem = new Promise((res,rej) => {
         setTimeout(() => 
-            res(auxProductos[idProducto])
-            
+            res(auxProductos.find( producto => producto.id == idProducto ))
+
         ,2000)
       })
       getItem.then((res)=>{
       
         setItem(res)
+        
       })
       
     
-}, [])
+}, [idProducto])
     
   return (
     <>

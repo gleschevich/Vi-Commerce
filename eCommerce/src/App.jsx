@@ -5,7 +5,7 @@ import './App.css'
 
 //LIBRERIAS Y FRAMEWORKS
 import '../node_modules/bootstrap/dist/js/bootstrap';
-import styles from "./styles.css";
+import './styles.scss';
 
 //COMPONENTES
 import NavBar from './components/navBar/NavBar'
@@ -26,8 +26,6 @@ function App() {
           <Route path='/categoria/:idCategoria' element= {<ItemListContainer titulo="Nuestros vinilos"/>} />     
           <Route path='/producto/:idProducto' element= {<ItemDetailContainer titulo="Vista del Detalle"/>} />     
           <Route path='*' element= {<p>ERROR 404</p>} />     
-          
-         
         </Routes>
       </BrowserRouter>
       

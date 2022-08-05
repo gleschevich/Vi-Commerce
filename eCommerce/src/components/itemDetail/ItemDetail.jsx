@@ -4,8 +4,13 @@ import ItemCount from '../itemCount/ItemCount'
 
 const ItemDetail = (props) => {
   
+  const [cantAgregar, setcantAgregar] = useState(1)
+  const onAdd = (cantidad) =>{
+        setcantAgregar(cantidad)
+
+      }
   return (
-    <>
+  <>
     
     <div className='container'>
       <div className='row'>
@@ -18,14 +23,12 @@ const ItemDetail = (props) => {
               <h2 className='text-primary m-2'>{props.producto.artista} - {props.producto.album}</h2>
               <h3 className='text-primary'>${props.producto.precio}</h3>
               <h5 className='text-primary'>Año de lanzamiento: {props.producto.año}</h5>
-              <ItemCount stock = "5" inicial="1"/>
+              <ItemCount stock = "5" inicial="1" onAdd={onAdd}/>
           </div>           
         </div>
       </div>
     </div>
-    
-
-    </>
+  </>
   )
 }
 

@@ -1,5 +1,5 @@
 
-import styles from './navBar.scss'
+import  './navBar.scss';
 
 import CartWidget from '../cartWidget/CartWidget'
 
@@ -16,7 +16,7 @@ const NavBar = () => {
     {//Contenedor de los elementos y botones del NavBar
     }
     <div className="container-fluid">
-      <a className="navbar-brand border border-white rounded-circle border-2" id="logo"><Link to='/'> Vi-Commerce <FcMusic/></Link> </a>
+      <a ><Link className="navbar-brand border border-white rounded-circle border-2" id="logo" to='/'> Vi-Commerce <FcMusic/></Link> </a>
        {//Boton del submenu
        }
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@ const NavBar = () => {
         }
         <ul className="navbar-nav me-0 mb-2 mb-lg-0 me-lg-0 ">
           <li className="nav-item ">
-            <a className="nav-link" aria-current="page" href="#"><Link to='/'>Home</Link></a>
+            <a ><Link className="nav-link" aria-current="page" to='/'>Home</Link></a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Vinilos</a>
@@ -39,9 +39,9 @@ const NavBar = () => {
                 Categorías
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item"><Link to='/categoria/Rock'>Rock</Link></a></li>
-                <li><a className="dropdown-item"><Link to='/categoria/Metal'>Metal</Link></a></li>
-                <li><a className="dropdown-item"><Link to='/categoria/Pop'>Pop</Link></a></li>
+                <li><a ><Link className="dropdown-item" to='/categoria/Rock'>Rock</Link></a></li>
+                <li><a ><Link className="dropdown-item" to='/categoria/Metal'>Metal</Link></a></li>
+                <li><a ><Link className="dropdown-item" to='/categoria/Pop'>Pop</Link></a></li>
               </ul>
            </li>
            <li>
