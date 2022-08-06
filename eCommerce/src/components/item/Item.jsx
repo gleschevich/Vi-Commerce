@@ -17,7 +17,7 @@ const Item = (props) => {
             <p className='text-primary' id='text-precio'>${props.productos.precio}</p>
         </div>           
         <div className='mb-3' id='details-icons'>
-          <a><Link className='btn btn-primary' to={`/producto/${props.productos.id}`} id='btn-detalle'>Ver Detalle</Link> </a>
+          <Link className='btn btn-primary' to={`/producto/${props.productos.id}`} id='btn-detalle'>Ver Detalle</Link> 
           
           <a className='btn btn-primary btn-icon ms-3' id='fav-icon'> <FaHeart/> </a>
         </div>
