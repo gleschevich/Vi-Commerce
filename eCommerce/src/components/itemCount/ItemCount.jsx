@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
+import { myContext } from '../cartContext/CartContext'
+
 
 const ItemCount = (props) => {
     const [cantProducto, setCantProducto] = useState(parseInt(props.inicial))
-
+    const {hideButton, setHideButton} = useContext(myContext)
+    
     const sumar = () =>{
         
         if (cantProducto == props.stock)
@@ -20,6 +23,8 @@ const ItemCount = (props) => {
     const onAdd = (cantidad) =>{
       
       props.onAdd(cantProducto)
+      setHideButton(true)
+      
 
     }
     return (

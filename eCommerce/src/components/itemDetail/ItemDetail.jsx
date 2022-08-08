@@ -1,16 +1,24 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect, useContext } from 'react'
 import ItemCount from '../itemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import Comprar from '../comprar/Comprar'
+import { myContext } from '../cartContext/CartContext'
 
 
 const ItemDetail = (props) => {
   
   const [cantAgregar, setcantAgregar] = useState(1)
-  const [hideButton, sethideButton] = useState(false)
-  const onAdd = (cantidad) =>{
-        setcantAgregar(cantidad)
-        sethideButton(true)
+  const {addItem,itemCart,setItemCart,quantity,setQuantity, hideButton, setHideButton} = useContext(myContext)
 
+  const onAdd = (cantidad) =>{
+        setQuantity(cantidad)
+        
+    }
+      
+      const finCompra= ()=>
+      {
+        setHideButton(false);
+        addItem(props.producto,quantity)
       }
   return (
   <>
@@ -27,8 +35,10 @@ const ItemDetail = (props) => {
               <h3 className='text-primary'>${props.producto.precio}</h3>
               <h5 className='text-primary'>Año de lanzamiento: {props.producto.año}</h5>
           
-          {hideButton?  <Link className='btn btn-primary' to='/cart' id='btn-detalle'>Finalizar compra</Link> :
-                          <ItemCount stock = "5" inicial="1" onAdd={onAdd}/>}
+          
+          {hideButton?  <Link className='btn btn-primary' to='#' id='btn-detalle' onClick={finCompra}>Finalizar compra</Link>
+           :
+                          <ItemCount stock = "5" inicial="1" onAdd={onAdd}/>} 
           </div>           
         </div>
       </div>
