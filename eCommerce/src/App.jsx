@@ -1,5 +1,4 @@
 
-import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CartContext from './components/cartContext/CartContext';
 import './App.css'

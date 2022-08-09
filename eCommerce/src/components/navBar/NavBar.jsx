@@ -7,6 +7,7 @@ import{FcMusic} from 'react-icons/fc'
 
 import {Link} from 'react-router-dom'
 
+//Componente que muestra la barra de navegación, incluyendo el componente CartWidget (Carrito de Compras)
 const NavBar = () => {
   return (
     <>

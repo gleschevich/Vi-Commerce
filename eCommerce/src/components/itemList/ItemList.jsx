@@ -1,6 +1,7 @@
 import Item from "../item/Item"
-import { useState,useEffect } from 'react'
 
+
+//Componente que mapea todos los productos del arreglo y los pasa a ITEM para que los muestre
 const ItemList = ({productos}) => {
     
     

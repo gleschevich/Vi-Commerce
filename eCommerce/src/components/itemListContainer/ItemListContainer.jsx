@@ -1,25 +1,21 @@
 
-import { FcCallback } from 'react-icons/fc'
-import ItemCount from '../itemCount/ItemCount'
 import ItemList from '../itemList/ItemList';
-import styles from './itemListContainer.scss'
+import './itemListContainer.scss'
 import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
 
-
+//Componente que recupera todo el arreglo de productos y los pasa a ITEM LIST para que los mapee e ITEM los muestre
 const ItemListContainer = (props) => {
-  let totalProductos=0;
 
-  const onAdd = (childData) =>{
-      totalProductos+=childData;
-      props.verTotalenCarrito(totalProductos)
-
-}
-
-
+//Arreglo que contiene todos los productos  
 const [productos, setProductos] = useState([])
+//Activa o desactiva la vista de Loading.. mientras se cargan los productos.
+const[isLoadingILC,setisLoadingILC] = useState(false)
+
+//Parametro que se utiliza para mostrar la categoría segun lo seleccionado por el usuario
 const {idCategoria} = useParams()
+
 let auxProductos = [
   {
     id:1,
@@ -73,9 +69,11 @@ let auxProductos = [
     }
   ]
   useEffect(() => {
-   
+    
     const getProductos = new Promise((res,rej) => {
+      setisLoadingILC(true)
       setTimeout(() => {
+       
         if (!idCategoria){
           res(auxProductos)
         }
@@ -87,17 +85,19 @@ let auxProductos = [
     })
     getProductos.then((res)=>{
       setProductos(res)
+      setisLoadingILC(false)
     })
-    
- 
-  
   }, [idCategoria])
 
   return (
     <>
         <section className= 'container-fluid mt-5' id="productos">
           <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
-          <ItemList productos={productos}/>  
+          {isLoadingILC ? <button class="btn btn-primary text-center" type="button" disabled>  
+                            <span class="spinner-border spinner-border-md mb-2" role="status" aria-hidden="true"></span>
+                               Cargando ...
+                        </button>  
+                        :<ItemList productos={productos}/>}  
         </section>
 
     </>

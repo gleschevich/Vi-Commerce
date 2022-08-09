@@ -2,8 +2,11 @@ import { useEffect, useState} from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from '../itemDetail/ItemDetail'
 
+
+//Componente que busca en el arreglo de productos y muestra el detalle del producto seleccionado por el usuario
 const ItemDetailContainer = (props) => {
 
+const [isLoadingIDC, setLoadingIDC] = useState(false)
 const [item, setItem] = useState({})
 const {idProducto} = useParams()
 let auxProductos=[
@@ -62,7 +65,9 @@ useEffect(() => {
   
     
     const getItem = new Promise((res,rej) => {
+        setLoadingIDC(true)
         setTimeout(() => 
+             
             res(auxProductos.find( producto => producto.id == idProducto ))
 
         ,2000)
@@ -70,7 +75,7 @@ useEffect(() => {
       getItem.then((res)=>{
       
         setItem(res)
-        
+        setLoadingIDC(false)
       })
       
     
@@ -80,7 +85,11 @@ useEffect(() => {
     <>
     <section className= 'container-fluid mt-5' id="productos">
     <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
-          <ItemDetail producto={item}/>  
+        {isLoadingIDC ? <button class="btn btn-primary text-center" type="button" disabled>  
+                            <span class="spinner-border spinner-border-md mb-2" role="status" aria-hidden="true"></span>
+                               Cargando ...
+                        </button>  
+        : <ItemDetail producto={item}/>}  
         </section>
     </>
   )

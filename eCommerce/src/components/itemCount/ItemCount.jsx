@@ -1,7 +1,7 @@
 import { useState,useContext } from 'react'
 import { myContext } from '../cartContext/CartContext'
 
-
+//Componente que muestra botón para añadir prodcutos al carrito y elegir su cantidad, además muestra el stock disponible
 const ItemCount = (props) => {
     const [cantProducto, setCantProducto] = useState(parseInt(props.inicial))
     const {hideButton, setHideButton} = useContext(myContext)
@@ -20,8 +20,8 @@ const ItemCount = (props) => {
         setCantProducto(cantProducto-1)
     }
     
+    //Función callback que devuelve la cantidad del producto elegida por el usuario. Además esconde el boton de añadir al carrito
     const onAdd = (cantidad) =>{
-      
       props.onAdd(cantProducto)
       setHideButton(true)
       

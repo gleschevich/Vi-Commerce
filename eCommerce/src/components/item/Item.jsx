@@ -1,10 +1,7 @@
-import { useState,useEffect } from 'react'
-import ItemCount from '../itemCount/ItemCount'
-import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer'
 import {FaHeart} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import styles from '../itemListContainer/ItemListContainer.scss'
 
+//Componente que muestra un item con su botón de Ver Detalle y añadir a Favoritos
 const Item = (props) => {
 
   return (
@@ -18,7 +15,6 @@ const Item = (props) => {
         </div>           
         <div className='mb-3' id='details-icons'>
           <Link className='btn btn-primary' to={`/producto/${props.productos.id}`} id='btn-detalle'>Ver Detalle</Link> 
-          
           <a className='btn btn-primary btn-icon ms-3' id='fav-icon'> <FaHeart/> </a>
         </div>
 
