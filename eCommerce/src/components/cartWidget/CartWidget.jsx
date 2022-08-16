@@ -2,14 +2,19 @@ import {FaShoppingCart} from 'react-icons/fa'
 import './cartWidget.scss'
 
 
+
 //Componente que muestra el icono del carrito de compras
-const CartWidget = () => {
-  return (
-    <div>
+const CartWidget = (props) => {
   
-    <FaShoppingCart/>
-     
+  return (<> 
+    <div>
+      <FaShoppingCart/>
+      <span id="cantCarrito"> {props.cantidadCarrito}</span>
+    
     </div>
+    
+    
+    </>
   )
 }
 

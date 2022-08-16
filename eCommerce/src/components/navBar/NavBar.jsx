@@ -1,14 +1,19 @@
 
 import  './navBar.scss';
-
 import CartWidget from '../cartWidget/CartWidget'
-
 import{FcMusic} from 'react-icons/fc'
-
+import { myContext } from '../cartContext/CartContext'
 import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+
+
+
 
 //Componente que muestra la barra de navegación, incluyendo el componente CartWidget (Carrito de Compras)
 const NavBar = () => {
+  const {hayProductos,cantidadCarrito} = useContext(myContext)
+  
+  
   return (
     <>
     {//Contenedor de TODO el navBar
@@ -51,7 +56,8 @@ const NavBar = () => {
         </ul>
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <button className="btn btn-danger ms-3 me-3 mb-3 mb-lg-0" href="#" id='cart'> <CartWidget/></button>
+           {hayProductos ? <button className="btn btn-danger ms-3 me-3 mb-3 mb-lg-0" href="#" id='cart'> <CartWidget cantidadCarrito={cantidadCarrito}/></button>:
+           <div></div>}
           </li>
         </ul>
         <form className="d-flex ">

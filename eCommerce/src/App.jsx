@@ -11,6 +11,7 @@ import './styles.scss';
 import NavBar from './components/navBar/NavBar'
 import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import Cart from './components/cart/Cart';
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
           <Route path='/' element= {<ItemListContainer titulo="Nuestros vinilos"/>} />     
           <Route path='/categoria/:idCategoria' element= {<ItemListContainer titulo="Nuestros vinilos"/>} />     
           <Route path='/producto/:idProducto' element= {<ItemDetailContainer titulo="Vista del Detalle"/>} />    
+          <Route path='/cart' element= {<Cart titulo="Carrito de compras"/>} />    
           <Route path='*' element= {<p>ERROR 404</p>} />     
         </Routes>
       </BrowserRouter>

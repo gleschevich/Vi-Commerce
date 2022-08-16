@@ -11,6 +11,12 @@ export default function CartContext({ children }) {
   const [itemCart, setItemCart] = useState({})
   //Estado del boton de añadir al carrito (si es verdadero se muestra boton Finalizar Compra)
   const [hideButton, setHideButton] = useState(false)
+
+  const [hayProductos, sethayProductos] = useState(false)
+  
+  const [cantidadCarrito, setcantidadCarrito] = useState(0)
+
+
   
     //Función que añade el producto y la cantidad seleccionada al carrito, si el item ya está agregado modifica su cantidad.
     const addItem=(itemCart,quantity)=>
@@ -40,6 +46,13 @@ export default function CartContext({ children }) {
             cart.push(auxItem)
             console.log(cart)
         }
+        let cantAux=0
+        cart.forEach(producto => {
+          cantAux += producto.cantidad
+          });
+        setcantidadCarrito(cantAux)
+
+        
     }
 
     //Función que devuelve TRUE si el producto está agregado en el carrito, FALSE si no lo está
@@ -49,7 +62,6 @@ export default function CartContext({ children }) {
            return true;
         else
         {
-          console.log("retorno falso")
           return false;
 
         }
@@ -59,20 +71,28 @@ export default function CartContext({ children }) {
     //Función que elimina todos los productos del carrito
     const clearCart=()=>
     {
-        for (let i = cart.length; i > 0; i--) {
+      for(let i = 0; i < cart.length; i++) {
             cart.pop();
-          }
-          console.log(cart);
+        }
+        sethayProductos(false)
 
     }
 
     //Función que elimina un producto específico  del carrito
     const removeItem=(item)=>
     {
-      for (let i = cart.length; i > 0; i--) {
+      console.log(item)
+      for(let i = 0; i < cart.length; i++) {
         if(cart[i].id == item.id)
-        cart.splice(i,1);
+          {
+            setcantidadCarrito(cantidadCarrito - cart[i].cantidad)
+
+            cart.splice(i,1)
+          }
       }
+      if (cart.length==0)
+                 sethayProductos(false)
+
 
     }
 
@@ -99,7 +119,7 @@ isInCart:(id) => i | -1
 
   return (
     <>
-      <myContext.Provider value={{ cart, setCart, quantity, setQuantity, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton }}>{children}</myContext.Provider>
+      <myContext.Provider value={{ cart, setCart, quantity, setQuantity, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton, hayProductos, sethayProductos,cantidadCarrito, setcantidadCarrito }}>{children}</myContext.Provider>
     </>
   );
 }

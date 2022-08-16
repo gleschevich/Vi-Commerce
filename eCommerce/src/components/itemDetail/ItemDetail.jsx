@@ -7,7 +7,7 @@ import { myContext } from '../cartContext/CartContext'
 //Además, cuando el usuario finaliza la compra añade el producto y su cantidad al carrito.
 const ItemDetail = (props) => {
   
-  const {addItem,quantity,setQuantity, hideButton, setHideButton} = useContext(myContext)
+  const {addItem,quantity,setQuantity, hideButton, setHideButton, sethayProductos  } = useContext(myContext)
 
   const onAdd = (cantidad) =>{
         setQuantity(cantidad)
@@ -15,6 +15,8 @@ const ItemDetail = (props) => {
       
       const finCompra= ()=>
       {
+        if (quantity!=0)
+          sethayProductos(true)
         setHideButton(false);
         addItem(props.producto,quantity)
       }

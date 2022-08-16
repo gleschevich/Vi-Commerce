@@ -1,0 +1,85 @@
+import {useContext,useState,useEffect} from 'react'
+import { myContext } from '../cartContext/CartContext'
+import {BsTrashFill} from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+
+
+const Cart = (props) => {
+    const {cart,removeItem} = useContext(myContext)
+    const [precioTotal, setprecioTotal] = useState(0)
+    const[carroVacio,setcarroVacio] = useState(true)
+    
+   
+    useEffect(() => {
+      //Calcula el precio total de los productos en el cart y lo setea en el estado
+      let precioAux = 0
+      cart.forEach(producto => {
+        precioAux += producto.precio * producto.cantidad
+      });
+      precioAux += precioTotal 
+      setprecioTotal(precioAux)
+    }, [])
+    
+    const eliminar = (productos)=>{
+      
+        
+      setprecioTotal(precioTotal - (productos.cantidad * productos.precio))
+      removeItem(productos)
+      console.log(cart.lenght)
+      if (cart.lenght==0)
+        setcarroVacio(true)
+      else 
+        setcarroVacio(false)
+    }
+    
+  return (
+     <>
+     {carroVacio ? <section className= 'container-fluid mt-5' id="carrito">
+          <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
+      
+        <table class="table table-dark table-hover">
+            <thead>
+             <tr>
+                <th scope="col">Tapa</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Album</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+             </tr>
+            </thead>
+        {
+            cart.map((productos)=>(
+
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>{productos.artista}</td>
+                        <td>{productos.album}</td>
+                        <td>{productos.cantidad}</td>
+                        <td>${productos.precio * productos.cantidad}</td>
+                        <td><button onClick={() => eliminar(productos)}> <BsTrashFill/></button></td>
+                        </tr>
+                    </tbody>
+                    
+                    
+            ))
+        
+        }
+     
+         <tfoot>
+           <td>Total {precioTotal}</td>
+        </tfoot>
+     </table>
+    </section>
+    :
+    <section className= 'container-fluid mt-5' id="productos">
+          <h1 className='text-start fs-2 fw-bold text-decoration-underline'>NO HAY ITEMS EN EL CARRITO</h1>
+          <Link className='btn btn-primary' to='/' id='btn-detalle'>Volver al inicio</Link>
+
+    </section>
+      }
+    </>
+  )
+}
+
+export default Cart
