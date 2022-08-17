@@ -11,9 +11,9 @@ export default function CartContext({ children }) {
   const [itemCart, setItemCart] = useState({})
   //Estado del boton de añadir al carrito (si es verdadero se muestra boton Finalizar Compra)
   const [hideButton, setHideButton] = useState(false)
-
+  //Estado que chequea si hay productos en el carrito para mostrar el widget
   const [hayProductos, sethayProductos] = useState(false)
-  
+  //Cantidad total de productos en el carrito para mostrar en el widget
   const [cantidadCarrito, setcantidadCarrito] = useState(0)
 
 

@@ -1,5 +1,7 @@
 import {FaShoppingCart} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import './cartWidget.scss'
+
 
 
 
@@ -7,11 +9,11 @@ import './cartWidget.scss'
 const CartWidget = (props) => {
   
   return (<> 
-    <div>
+    <Link to='/cart' id='cart'>
       <FaShoppingCart/>
       <span id="cantCarrito"> {props.cantidadCarrito}</span>
     
-    </div>
+    </Link>
     
     
     </>
