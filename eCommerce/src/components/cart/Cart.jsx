@@ -67,7 +67,11 @@ const Cart = (props) => {
         }
      
          <tfoot>
-           <td>Total {precioTotal}</td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td>Total ${precioTotal}</td>
         </tfoot>
      </table>
     </section>
