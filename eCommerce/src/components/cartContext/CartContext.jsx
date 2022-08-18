@@ -83,16 +83,16 @@ export default function CartContext({ children }) {
     {
       console.log(item)
       for(let i = 0; i < cart.length; i++) {
+        console.log(cart[i].id)
         if(cart[i].id == item.id)
           {
             setcantidadCarrito(cantidadCarrito - cart[i].cantidad)
-
             cart.splice(i,1)
           }
       }
       if (cart.length==0)
-                 sethayProductos(false)
-
+            sethayProductos(false)
+            
 
     }
 

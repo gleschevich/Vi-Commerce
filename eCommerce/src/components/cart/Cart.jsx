@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 
 
 const Cart = (props) => {
-    const {cart,removeItem} = useContext(myContext)
+    const {cart,removeItem,sethayProductos,hayProductos} = useContext(myContext)
     const [precioTotal, setprecioTotal] = useState(0)
-    const[carroVacio,setcarroVacio] = useState(true)
+    
     
    
     useEffect(() => {
@@ -25,16 +25,18 @@ const Cart = (props) => {
         
       setprecioTotal(precioTotal - (productos.cantidad * productos.precio))
       removeItem(productos)
-      console.log(cart.lenght)
-      if (cart.lenght==0)
-        setcarroVacio(true)
+      console.log(cart.length)
+    
+
+      if (cart.length==0)
+        sethayProductos(false)
       else 
-        setcarroVacio(false)
+        sethayProductos(true)
     }
     
   return (
      <>
-     {carroVacio ? <section className= 'container-fluid mt-5' id="carrito">
+     {hayProductos ? <section className= 'container-fluid mt-5' id="carrito">
           <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
       
         <table class="table table-dark table-hover">
