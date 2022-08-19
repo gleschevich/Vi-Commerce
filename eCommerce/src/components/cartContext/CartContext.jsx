@@ -92,8 +92,6 @@ export default function CartContext({ children }) {
       }
       if (cart.length==0)
             sethayProductos(false)
-            
-
     }
 
 
