@@ -15,6 +15,7 @@ export default function CartContext({ children }) {
   const [hayProductos, sethayProductos] = useState(false)
   //Cantidad total de productos en el carrito para mostrar en el widget
   const [cantidadCarrito, setcantidadCarrito] = useState(0)
+  const [precioTotal, setprecioTotal] = useState(0)
 
 
   
@@ -75,15 +76,18 @@ export default function CartContext({ children }) {
             cart.pop();
         }
         sethayProductos(false)
+        setprecioTotal(0)
+        setcantidadCarrito(0)
+       
+        console.log("VACIO " + cart)
+    
 
     }
 
     //Función que elimina un producto específico  del carrito
     const removeItem=(item)=>
     {
-      console.log(item)
       for(let i = 0; i < cart.length; i++) {
-        console.log(cart[i].id)
         if(cart[i].id == item.id)
           {
             setcantidadCarrito(cantidadCarrito - cart[i].cantidad)
@@ -91,7 +95,11 @@ export default function CartContext({ children }) {
           }
       }
       if (cart.length==0)
-            sethayProductos(false)
+      {
+        setcantidadCarrito(0)
+        sethayProductos(false)
+        setprecioTotal(0)
+      }
     }
 
 
@@ -117,7 +125,7 @@ isInCart:(id) => i | -1
 
   return (
     <>
-      <myContext.Provider value={{ cart, setCart, quantity, setQuantity, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton, hayProductos, sethayProductos,cantidadCarrito, setcantidadCarrito }}>{children}</myContext.Provider>
+      <myContext.Provider value={{ cart, setCart, quantity, setQuantity, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton, hayProductos, sethayProductos,cantidadCarrito, setcantidadCarrito,precioTotal, setprecioTotal }}>{children}</myContext.Provider>
     </>
   );
 }

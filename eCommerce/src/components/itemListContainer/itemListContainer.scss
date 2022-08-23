@@ -3,6 +3,7 @@
 .card{
     width: 18rem;
     background-image: linear-gradient(to bottom, grey,white);
+   
 }
 
 
@@ -29,4 +30,20 @@
 }
 #btn-detalle:hover{
     color:$danger;
+}
+
+
+@keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+}
+
+#title {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+
+    
 }

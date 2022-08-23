@@ -7,7 +7,7 @@ import { myContext } from '../cartContext/CartContext'
 //Además, cuando el usuario finaliza la compra añade el producto y su cantidad al carrito.
 const ItemDetail = (props) => {
   
-  const {addItem,quantity,setQuantity, hideButton, setHideButton, sethayProductos  } = useContext(myContext)
+  const {addItem,quantity,setQuantity, hideButton, setHideButton, sethayProductos,precioTotal,setprecioTotal  } = useContext(myContext)
 
   const onAdd = (cantidad) =>{
         setQuantity(cantidad)
@@ -19,6 +19,11 @@ const ItemDetail = (props) => {
           sethayProductos(true)
         setHideButton(false);
         addItem(props.producto,quantity)
+        //Calcula el precio total de los productos en el cart y lo setea en el estado
+      let precioAux = 0
+      precioAux = props.producto.precio * quantity
+      precioAux += precioTotal 
+      setprecioTotal(precioAux)
       }
   return (
   <>

@@ -46,12 +46,12 @@ const {idCategoria} = useParams()
     <header className="bg-grey py-5">
       <div className="container px-4 px-lg-5 ">
         <div className="text-center text-white">
-            <h1 className="display-4 fw-bolder text-danger">VI-COMMERCE</h1>
-            <p className="lead fw-normal text-white-50 mb-0">Tienda de vinilos musicales</p>
+            <h1 className="display-4 fw-bolder text-danger" id='title'>VI-COMMERCE</h1>
+            <p className="lead fw-normal text-white-50">Tienda de vinilos musicales</p>
         </div>
       </div>
     </header>
-        <section className= 'container-fluid mt-5' id="productos">
+        <section className= 'container-fluid' id="productos">
           <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
           {isLoadingILC ? <button className="btn btn-primary text-center" type="button" disabled>  
                             <span className="spinner-border spinner-border-md mb-2" role="status" aria-hidden="true"></span>

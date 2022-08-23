@@ -16,23 +16,18 @@ const NavBar = () => {
   
   return (
     <>
-    {//Contenedor de TODO el navBar
-    }
+    
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    {//Contenedor de los elementos y botones del NavBar
-    }
+   
     <div className="container-fluid">
-      <a ><Link className="navbar-brand border border-white rounded-circle border-2" id="logo" to='/'> Vi-Commerce <FcMusic/></Link> </a>
-       {//Boton del submenu
-       }
+      <Link className="navbar-brand border border-white rounded-circle border-2" id="logo" to='/'> Vi-Commerce <FcMusic/></Link>
+      
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
-       {//Collapse contenedor que esconde contenido del search
-       }
+      
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        {//ul lista que contiene los botones en sus elementos li
-        }
+     
         <ul className="navbar-nav me-0 mb-2 mb-lg-0 me-lg-0 ">
           <li className="nav-item ">
             <a ><Link className="nav-link" aria-current="page" to='/'>Home</Link></a>

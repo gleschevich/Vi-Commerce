@@ -5,20 +5,14 @@ import { Link } from 'react-router-dom'
 
 
 const Cart = (props) => {
-    const {cart,removeItem,sethayProductos,hayProductos} = useContext(myContext)
-    const [precioTotal, setprecioTotal] = useState(0)
+    const {cart,removeItem,sethayProductos,hayProductos,precioTotal, setprecioTotal} = useContext(myContext)
+    
     
     
    
-    useEffect(() => {
-      //Calcula el precio total de los productos en el cart y lo setea en el estado
-      let precioAux = 0
-      cart.forEach(producto => {
-        precioAux += producto.precio * producto.cantidad
-      });
-      precioAux += precioTotal 
-      setprecioTotal(precioAux)
-    }, [])
+    // useEffect(() => {
+      
+    // }, [])
     
     const eliminar = (productos)=>{
       
@@ -76,6 +70,10 @@ const Cart = (props) => {
            <td>Total ${precioTotal}</td>
         </tfoot>
      </table>
+        <section className= 'container-fluid mt-5' id="productos">
+              <Link className='btn btn-primary' to='/checkout' id='btn-detalle'>Finalizar compra</Link>
+
+        </section>
     </section>
     :
     <section className= 'container-fluid mt-5' id="productos">
