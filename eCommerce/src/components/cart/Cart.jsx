@@ -1,4 +1,4 @@
-import {useContext,useState,useEffect} from 'react'
+import {useContext} from 'react'
 import { myContext } from '../cartContext/CartContext'
 import {BsTrashFill} from 'react-icons/bs'
 import { Link } from 'react-router-dom'
@@ -7,19 +7,13 @@ import { Link } from 'react-router-dom'
 const Cart = (props) => {
     const {cart,removeItem,sethayProductos,hayProductos,precioTotal, setprecioTotal} = useContext(myContext)
     
-    
-    
-   
-    // useEffect(() => {
-      
-    // }, [])
+
     
     const eliminar = (productos)=>{
       
         
       setprecioTotal(precioTotal - (productos.cantidad * productos.precio))
       removeItem(productos)
-      console.log(cart.length)
     
 
       if (cart.length==0)

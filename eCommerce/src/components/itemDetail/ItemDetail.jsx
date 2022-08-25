@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import {  useContext } from 'react'
 import ItemCount from '../itemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import { myContext } from '../cartContext/CartContext'
@@ -7,23 +7,26 @@ import { myContext } from '../cartContext/CartContext'
 //Además, cuando el usuario finaliza la compra añade el producto y su cantidad al carrito.
 const ItemDetail = (props) => {
   
-  const {addItem,quantity,setQuantity, hideButton, setHideButton, sethayProductos,precioTotal,setprecioTotal  } = useContext(myContext)
+  const {addItem, hideButton, setHideButton, sethayProductos,precioTotal,setprecioTotal  } = useContext(myContext)
 
-  const onAdd = (cantidad) =>{
-        setQuantity(cantidad)
+  const onAdd = (cantProducto) =>{
+       
+        addItem(props.producto,cantProducto)
+        sethayProductos(true)
+      
+        let precioAux = 0
+        precioAux = props.producto.precio * cantProducto
+        precioAux += precioTotal 
+        setprecioTotal(precioAux)
+      
     }
       
       const finCompra= ()=>
       {
-        if (quantity!=0)
-          sethayProductos(true)
+       
         setHideButton(false);
-        addItem(props.producto,quantity)
-        //Calcula el precio total de los productos en el cart y lo setea en el estado
-      let precioAux = 0
-      precioAux = props.producto.precio * quantity
-      precioAux += precioTotal 
-      setprecioTotal(precioAux)
+       
+        
       }
   return (
   <>
@@ -41,7 +44,9 @@ const ItemDetail = (props) => {
               <h5 className='text-primary'>Año de lanzamiento: {props.producto.año}</h5>
 
           
-          {hideButton ?  <Link className='btn btn-primary' to='/cart' id='btn-detalle' onClick={finCompra}>Finalizar compra</Link>
+          {hideButton ? <span><Link className='btn btn-primary me-2' to='/cart' id='btn-detalle' onClick={finCompra}>Finalizar compra</Link>
+                        <Link className='btn btn-primary' to='/' id='btn-detalle' onClick={finCompra}>Volver al inicio</Link></span>
+                          
                           :
                         <ItemCount stock = "5" inicial="1" onAdd={onAdd}/>} 
           </div>           

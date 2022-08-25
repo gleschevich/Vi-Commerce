@@ -13,16 +13,42 @@ export default function Checkout() {
   const [email, setEmail] = useState('')
   const [idOrder, setIdOrder] = useState('')
   const [compro, setCompro] = useState(false)
+  const [mensaje, setMensaje] = useState('')
 
  const {cart, precioTotal, clearCart} = useContext(myContext) 
   
  function terminarCompra() {
+    let validado = true;
+    if(name.length == 0)
+    {
+      setMensaje("Ingrese su nombre")
+      validado= false
+    }
+    let re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+	  if(!re.exec(email))
+    {
+      setMensaje("Ingrese direccion de email valida " );
+      validado = false
+
+    }
+    if (tel.length == 0)
+    {
+      setMensaje("Ingrese su telefono")
+      validado = false
+
+    }
+
+  if (validado)
+  {
+
+    
     const date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     let fechaCompra = `${day}-${month}-${year}`;
  
+
     
     const order = {
       user: { name, tel, email },
@@ -44,17 +70,9 @@ export default function Checkout() {
         })
         clearCart()
         setCompro(true)
-  })
-        
-       
-      
-      
-      
-      
-      
-   
-    
+    })
   }
+}
 
   return (
     <>
@@ -86,7 +104,7 @@ export default function Checkout() {
   <div className="form-group row mb-2">
   <div className='col-sm-10'>
     <button className='btn btn-primary mt-2' onClick={terminarCompra}>Terminar Compra</button>
-    <p className='text-primary'>Id de tu compra: {idOrder}</p>  
+    <p className='text-danger'>{mensaje}</p>  
 
   </div>
 </div>  

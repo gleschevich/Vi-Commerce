@@ -1,0 +1,21 @@
+@import "/src/styles.scss";
+
+#face{
+    background-color: #3b5998;
+}
+#insta{
+    background-color: #ac2bac;
+}
+#whats{
+    background-color:#25d366
+}
+#linked{
+    background-color: #0082ca
+}
+#git{
+    background-color: #333333;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}

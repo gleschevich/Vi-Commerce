@@ -5,8 +5,6 @@ export default function CartContext({ children }) {
   
   //Arreglo de productos agregados al carrito
   const [cart, setCart] = useState([])
-  //Cantidad de ese producto agregado al carrito
-  const [quantity, setQuantity] = useState(0)
   //Producto (Objeto JSON) que se quiere agregar al carrito
   const [itemCart, setItemCart] = useState({})
   //Estado del boton de añadir al carrito (si es verdadero se muestra boton Finalizar Compra)
@@ -15,6 +13,7 @@ export default function CartContext({ children }) {
   const [hayProductos, sethayProductos] = useState(false)
   //Cantidad total de productos en el carrito para mostrar en el widget
   const [cantidadCarrito, setcantidadCarrito] = useState(0)
+
   const [precioTotal, setprecioTotal] = useState(0)
 
 
@@ -23,17 +22,13 @@ export default function CartContext({ children }) {
     const addItem=(itemCart,quantity)=>
     {
        let auxItem={}
-       //Si el producto está agregado al carrito, se suma la cantidad (quantity )a la ya registrada
        if (isInCart(itemCart,cart))
         {
           for(let i = 0; i < cart.length; i++) {
             if (cart[i].id === itemCart.id)
               cart[i].cantidad+=quantity
             }
-            console.log("repetido")
-            console.log(cart)
         }
-       //Si el producto no está agregado al carrito, se lo agrega
         else
         {
             auxItem=
@@ -45,7 +40,6 @@ export default function CartContext({ children }) {
                 cantidad:quantity
             }
             cart.push(auxItem)
-            console.log(cart)
         }
         let cantAux=0
         cart.forEach(producto => {
@@ -79,7 +73,6 @@ export default function CartContext({ children }) {
         setprecioTotal(0)
         setcantidadCarrito(0)
        
-        console.log("VACIO " + cart)
     
 
     }
@@ -104,28 +97,10 @@ export default function CartContext({ children }) {
 
 
 
-  // const [cart, setCart] = useState(true);
-  /*
-  addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
-  {
-    if no lo tiene
-    setCart cart.push item con su cantidad
-    sino
-    setCart cambia la cantidad
-  }
-removeItem(itemId) // Remover un item del cart por usando su id
-//{filter}
-clear() // Remover todos los items
-//setcart([])
-isInCart:(id) => i | -1
-{
-    find / findOne
-}
-*/
 
   return (
     <>
-      <myContext.Provider value={{ cart, setCart, quantity, setQuantity, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton, hayProductos, sethayProductos,cantidadCarrito, setcantidadCarrito,precioTotal, setprecioTotal }}>{children}</myContext.Provider>
+      <myContext.Provider value={{ cart, setCart, removeItem,addItem,clearCart,isInCart,itemCart,setItemCart,hideButton, setHideButton, hayProductos, sethayProductos,cantidadCarrito, setcantidadCarrito,precioTotal, setprecioTotal }}>{children}</myContext.Provider>
     </>
   );
 }

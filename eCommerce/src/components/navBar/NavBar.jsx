@@ -5,6 +5,8 @@ import{FcMusic} from 'react-icons/fc'
 import { myContext } from '../cartContext/CartContext'
 import {Link} from 'react-router-dom'
 import { useContext } from 'react'
+import {BsFacebook, BsInstagram, BsWhatsapp, BsLinkedin, BsGithub} from 'react-icons/bs'
+
 
 
 
@@ -32,9 +34,7 @@ const NavBar = () => {
           <li className="nav-item ">
             <a ><Link className="nav-link" aria-current="page" to='/'>Home</Link></a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Vinilos</a>
-          </li>
+          
           <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorías
@@ -56,8 +56,12 @@ const NavBar = () => {
           </li>
         </ul>
         <form className="d-flex ">
-          <input className="form-control me-2" type="search" placeholder="Buscar en la página" aria-label="Search"/>
-          <button className="btn btn-danger" type="submit">Buscar</button>
+            <Link className="btn btn-primary btn-floating m-1 rounded-circle" id='face' to='https://www.facebook.com/gejo.leschevich'><BsFacebook/> </Link>  
+            <Link className="btn btn-primary btn-floating m-1 rounded-circle" id='insta' to='https://www.instagram.com/gejol86/'><BsInstagram/> </Link>  
+            <Link className="btn btn-primary btn-floating m-1 rounded-circle" id='whats' to='/'><BsWhatsapp/> </Link>  
+            <Link className="btn btn-primary btn-floating m-1 rounded-circle" id='linked' to='https://www.linkedin.com/in/german-leschevich-b9986927/'><BsLinkedin/> </Link>  
+            <Link className="btn btn-primary btn-floating m-1 rounded-circle" id='git' to='https://github.com/gleschevich/Vi-Commerce'><BsGithub/> </Link>  
+        
         </form>
     
       </div>
