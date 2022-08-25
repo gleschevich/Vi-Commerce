@@ -1,7 +1,7 @@
 
 import  './navBar.scss';
 import CartWidget from '../cartWidget/CartWidget'
-import{FcMusic} from 'react-icons/fc'
+import{IoMdDisc} from 'react-icons/io'
 import { myContext } from '../cartContext/CartContext'
 import {Link} from 'react-router-dom'
 import { useContext } from 'react'
@@ -22,7 +22,7 @@ const NavBar = () => {
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
    
     <div className="container-fluid">
-      <Link className="navbar-brand border border-white rounded-circle border-2" id="logo" to='/'> Vi-Commerce <FcMusic/></Link>
+      <Link className="navbar-brand border border-white rounded-circle border-2" id="logo" to='/'>Vi-Commerce <IoMdDisc/></Link>
       
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

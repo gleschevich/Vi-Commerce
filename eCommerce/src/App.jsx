@@ -16,10 +16,8 @@ import Checkout from './components/checkout/Checkout';
 import Footer from './components/footer/Footer';
 
 function App() {
+  document.title = "Vi-Commerce: Vinilos!"
   
-  
-  
-
   return (
   <>
     <CartContext>
