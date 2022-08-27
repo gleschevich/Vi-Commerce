@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element= {<ItemListContainer titulo="Nuestros vinilos"/>} />     
           <Route path='/categoria/:idCategoria' element= {<ItemListContainer titulo="Nuestros vinilos"/>} />     
-          <Route path='/producto/:idProducto' element= {<ItemDetailContainer titulo="Vista del Detalle"/>} />    
+          <Route path='/producto/:idProducto' element= {<ItemDetailContainer titulo="Detalle del vinilo"/>} />    
           <Route path='/cart' element= {<Cart titulo="Carrito de compras"/>} />    
           <Route path='/checkout' element= {<Checkout titulo="Finaliza tu compra!"/>} />    
           <Route path='*' element= {<p>ERROR 404</p>} />     
