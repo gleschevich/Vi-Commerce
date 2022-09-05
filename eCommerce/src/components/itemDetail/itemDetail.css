@@ -1,0 +1,16 @@
+@charset "UTF-8";
+#detail__artista {
+  -webkit-text-stroke: 0.3px red;
+}
+
+#detail__album {
+  -webkit-text-stroke: 0.3px red;
+}
+
+#detail__precio {
+  -webkit-text-stroke: 0.3px red;
+}
+
+#detail__año {
+  -webkit-text-stroke: 0.3px red;
+}/*# sourceMappingURL=itemDetail.css.map */

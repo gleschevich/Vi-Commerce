@@ -83,7 +83,7 @@ export default function Checkout() {
       <>
       {compro ?  
         <section className= 'container-fluid mt-5' id="productos">
-          <h2 className='text-start fs-2 fw-bold text-decoration-underline'>Quieres seguir comprando?</h2>
+          <h2 className='text-start fs-2 fw-bold text-decoration-underline' id='title__container'>Quieres seguir comprando?</h2>
           <Link className='btn btn-primary' to='/' id='btn-detalle'>Volver al inicio</Link>
         </section>
       :
@@ -111,15 +111,8 @@ export default function Checkout() {
     <div className='col-sm-10'>
       <button className='btn btn-primary mt-2' id='btn-detalle' onClick={terminarCompra}>Terminar Compra</button>
       <p className='text-danger'>{mensaje}</p>  
-  
     </div>
-  </div>  
-      
-     
-      
-    
-      
-   
+    </div>  
     </div>
     </div>
       

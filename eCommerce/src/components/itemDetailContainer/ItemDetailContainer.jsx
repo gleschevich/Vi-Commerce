@@ -29,7 +29,7 @@ useEffect(() => {
   return (
     <>
     <section className= 'container-fluid mt-5' id="productos">
-    <h3 className='text-start fs-2 fw-bold text-decoration-underline'>{props.titulo}</h3>
+    <h3 className='text-start fs-2 fw-bold text-decoration-underline' id='title__container'>{props.titulo}</h3>
         {isLoadingIDC ? <button class="btn btn-primary text-center" type="button" disabled>  
                             <span class="spinner-border spinner-border-md mb-2" role="status" aria-hidden="true"></span>
                                Cargando ...
